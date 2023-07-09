@@ -19,10 +19,10 @@ class Empresa(models.Model):
 class Empleado(models.Model):
   first_name = models.CharField(max_length=30)
   last_name = models.CharField(max_length=30)
-  tipo_documento = models.ForeignKey(TipoDocumento, on_delete=models.CASCADE)
+  tipo_documento = models.ForeignKey(TipoDocumento,  on_delete=models.CASCADE)
   documento = models.IntegerField()
   lugar_residencia = models.ForeignKey(Ciudad, on_delete=models.CASCADE)
-  fecha_nacimiento = models.DateField(null=True)
+  fecha_nacimiento = models.DateField()
   email = models.EmailField(max_length=50)
   telefono = models.IntegerField()
   usuario = models.CharField(max_length=50)

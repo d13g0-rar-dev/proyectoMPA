@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Empleados</title>
+</head>
+<body>
+  <h1>Esta es la pagina principal de Empleados</h1>
+  <table>
+    <thead>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Tipo Documento</th>
+      <th>Documento</th>
+      <th>Fecha de Nacimiento</th>
+      <th>Email</th>
+      <th>Telefono</th>
+      <th>Usuario</th>
+      <th>Contraseña</th>
+      <th>Empresa</th>
+      <th>Lugar de Residencia</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Juan</td>
+        <td>Dominguez</td>
+      </tr>
+      <tr>
+        <td>Mario</td>
+        <td>Castañeda</td>
+      </tr>
+    </tbody>
+  </table>
+
+  {% if empleados %}
+  <ul>
+    {% for empleado in empleados%}
+      <li><b>Nombre:</b>{{empleado.first_name}} {{empleado.last_name}}
+    {% endfor %}  
+  </ul>
+  {% endif   %}
+</body>
+</html>
