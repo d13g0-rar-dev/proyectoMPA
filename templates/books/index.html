@@ -33,10 +33,10 @@
     </tbody>
   </table>
 
-  {% if empleados %}
+  {% if empresas %}
   <ul>
-    {% for empleado in empleados%}
-      <li><b>Nombre:</b>{{empleado.first_name}} {{empleado.last_name}}
+    {% for empresa in empresas%}
+      <li><b>Nombre:</b>{{empresa.nombre_empresa}} {{empresa.nit}}
     {% endfor %}  
   </ul>
   {% endif   %}
