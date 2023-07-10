@@ -1,0 +1,18 @@
+{%extends "/base.html"%}
+
+{%block extrahead%}
+  <title>Empresas</title>
+{%endblock extrahead%}
+
+
+{%block content%}
+<div class="container">
+  <h1>Lista de Empresas:</h1>
+  {%if empresas%}
+    <ul>
+      {%for empresa in empresas%}
+      <li><b>Nombre:</b>{{empresa.nombre_empresa}} {{empresa.nit}}</li>
+      {%endfor%}
+    </ul>
+</div>
+{%endblock content%}
