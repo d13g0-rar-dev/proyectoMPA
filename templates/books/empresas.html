@@ -1,4 +1,4 @@
-{%extends "/base.html"%}
+{%extends "base.html"%}
 
 {%block extrahead%}
   <title>Empresas</title>
@@ -14,5 +14,6 @@
       <li><b>Nombre:</b>{{empresa.nombre_empresa}} {{empresa.nit}}</li>
       {%endfor%}
     </ul>
+    {%endif%}
 </div>
 {%endblock content%}
