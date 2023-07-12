@@ -7,4 +7,5 @@ urlpatterns = [
   #path("templates/books/", views.index, name="index"),
   path("empresas/", views.empresas, name="empresas"),
   path("empresas/new/", views.new_Empresa, name="new_Empresa"),
+  path("empleados/", views.empleados, name="empleados"),
 ]

@@ -4,7 +4,8 @@ from django.template import loader
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from books.forms import EmpresaForm
-from .models import Empresa
+from .models import Empresa, Empleado
+
 
 # Create your views here.
 def empresas(request):
@@ -13,6 +14,11 @@ def empresas(request):
   context = {"empresas":empresas,}
   return HttpResponse(template.render(context,request))
 
+def empleados(request):
+  empleados= Empleado.objects.all() 
+  template = loader.get_template("books/empleados.html")
+  context = {"empleados":empleados,}
+  return HttpResponse(template.render(context,request))  
 
 def home(request):
   template=loader.get_template("index.html")

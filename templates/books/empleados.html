@@ -1,0 +1,19 @@
+{%extends "base.html"%}
+
+{%block extrahead%}
+  <title>Empleados</title>
+{%endblock extrahead%}
+
+
+{%block content%}
+<div class="container">
+  <h1>Lista de Empleados:</h1>
+  {%if empleados%}
+    <ul>
+      {%for empleado in empleados%}
+      <li><b>Nombre: </b>{{empleado.first_name}} <b>Apellido: </b>{{empleado.last_name}} <b>Tipo de Documento: </b>{{empleado.tipo_documento}} <b>Documento: </b>{{empleado.documento}} <b>Ciudad de Residencia: </b>{{empleado.lugar_residencia}} <b>Fecha de Nacimiento: </b>{{empleado.fecha_nacimiento}} <b>Email: </b>{{empleado.email}} <b>Telefono: </b>{{empleado.telefono}} <b>Usuario: </b>{{empleado.usuario}} <b>Contraseña: </b>{{empleado.password}} <b>Empresa: </b>{{empleado.empresa}}</li>
+      {%endfor%}
+    </ul>
+    {%endif%}
+</div>
+{%endblock content%}

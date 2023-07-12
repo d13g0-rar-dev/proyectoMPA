@@ -23,21 +23,28 @@
           <li class="nav-item">
             <a href="{%url 'home'%}" class="nav-link active" aria-current="page">Home</a>
           </li>
-          <li class="nav-item">
-            <a href="{%url 'empresas'%}" class="nav-link">Empresas</a>
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" id="dropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Empresas</a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li><a href="{%url 'empresas'%}" class="dropdown-item">Explorar Empresas</a></li>
+              <li><a href="{%url 'new_Empresa'%}" class="dropdown-item">Crear Empresas</a></li>
+            </ul>
           </li>
-          <li class="nav-item">
+          <!--<li class="nav-item">
             <a href="#" class="nav-link">Ciudades</a>
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">Tipos de Documento</a>
-          </li>
+          </li>-->
           <li class="nav-item dropdown">
-            <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button">Empleados</a>
+            <a href="#" class="nav-link dropdown-toggle" id="dropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Empleados</a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <li><a href="" class="dropdown-item">Explorar Empleados</a></li>
+              <li><a href="{%url 'empleados'%}" class="dropdown-item">Explorar Empleados</a></li>
               <li><a href="" class="dropdown-item">Crear Empleados</a></li>
             </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link" aria-current="page">Integrantes</a>
           </li>
         </ul>
       </div>
