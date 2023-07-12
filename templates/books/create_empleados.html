@@ -1,0 +1,16 @@
+{%extends "base.html"%}
+
+{%block extrahead%}
+  <title>Nuev Empleado</title>
+{%endblock extrahead%}
+
+{%block content%}
+  <div class="container">
+    <h1>Crear nuevo empleado:</h1>
+    <form action="" method="post">
+      {% csrf_token %}
+      {{form}}
+      <input type="submit" value="Submit">
+    </form>
+{%endblock content%}
+  </div>
