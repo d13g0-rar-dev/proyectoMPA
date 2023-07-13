@@ -22,14 +22,13 @@ class EmpresaForm(forms.ModelForm):
     }
  
  
- 
 class EmpleadoForm(forms.ModelForm):
   class Meta:   
     model = Empleado
     
     fields = {
-      "first_name",
-      "last_name",
+      "nombre",
+      "apellido",
       "tipo_documento",
       "documento",
       "lugar_residencia",
@@ -41,8 +40,8 @@ class EmpleadoForm(forms.ModelForm):
       "empresa", 
     }
     labels = {
-      "Nombre Empleado": "first_name",
-      "Apellido": "last_name",
+      "Nombre": "nombre",
+      "Apellido": "apellido",
       "Tipo de Documento": "tipo_documento",
       "Documento": "documento",
       "Ciudad de Residencia": "lugar_residencia",
@@ -54,6 +53,15 @@ class EmpleadoForm(forms.ModelForm):
       "Empresa":"empresa",
     }
     widgets = {
-      "nombre_empresa" : forms.TextInput(attrs={"class": "form-control", "required":""}),
-      "nit" : forms.TextInput(attrs={"class": "form-control", "required":""})
+      "nombre" : forms.TextInput(attrs={"class": "form-control", "required":""}),
+      "apellido" : forms.TextInput(attrs={"class": "form-control", "required":""}),
+      "tipo_documento" : forms.TextInput(attrs={"class": "form-control", "required":""}),
+      "documento" : forms.TextInput(attrs={"class": "form-control", "required":""}),
+      "lugar_residencia" : forms.TextInput(attrs={"class": "form-control", "required":""}),
+      "fecha_nacimiento" : forms.TextInput(attrs={"class": "form-control", "required":""}),
+      "email" : forms.EmailInput(attrs={"class": "form-control", "required":""}),
+      "telefono" : forms.TextInput(attrs={"class": "form-control", "required":""}),
+      "usuario" : forms.TextInput(attrs={"class": "form-control", "required":""}),
+      "password" : forms.PasswordInput(attrs={"class": "form-control", "required":""}),
+      "empresa" : forms.TextInput(attrs={"class": "form-control", "required":""})
     }
