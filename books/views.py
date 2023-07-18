@@ -1,7 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from django.template import loader
 from django.http import HttpResponseRedirect
+from django.contrib import messages
 from django.urls import reverse
 from books.forms import EmpresaForm, EmpleadoForm
 from .models import Empresa, Empleado, TipoDocumento, Ciudad
@@ -73,6 +74,16 @@ def new_Empleado(request):
   else:
     form = EmpleadoForm()
   return render(request, "books/create_empleados.html", {"form":form})
+
+def delete_empleado(request, id):
+    empleado = get_object_or_404(Empleado, pk=id)
+    context = {'empleado': empleado}    
+
+    if request.method=='GET':
+        empleado.delete()
+        messages.success(request,  'Se ha eliminado al empleado exitosamente')
+        next = request.POST.get('next','/empleado')
+        return HttpResponseRedirect(next)
 
 def integrantes(request):
   template=loader.get_template("books/integrantes.html")
