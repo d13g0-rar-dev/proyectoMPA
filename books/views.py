@@ -76,14 +76,13 @@ def new_Empleado(request):
   return render(request, "books/create_empleados.html", {"form":form})
 
 def delete_empleado(request, id):
-    empleado = get_object_or_404(Empleado, pk=id)
-    context = {'empleado': empleado}    
-
-    if request.method=='GET':
-        empleado.delete()
-        messages.success(request,  'Se ha eliminado al empleado exitosamente')
-        next = request.POST.get('next','/empleado')
-        return HttpResponseRedirect(next)
+  empleado = get_object_or_404(Empleado, pk=id)
+  context = {'empleado': empleado}    
+  if request.method=='GET':
+    empleado.delete()
+    messages.success(request,  'Se ha eliminado al empleado exitosamente')
+    next = request.POST.get('next','/empleado')
+    return HttpResponseRedirect(next)
 
 def integrantes(request):
   template=loader.get_template("books/integrantes.html")
