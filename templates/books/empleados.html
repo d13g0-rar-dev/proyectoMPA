@@ -13,7 +13,8 @@
       <center>
         {%for empleado in empleados%}
       <li><b>Nombre: </b>{{empleado.nombre}}<br><b>Apellido: </b>{{empleado.apellido}} <br><b>Tipo de Documento: </b>{{empleado.tipo_documento.nombre_tipo}}<br> <b>Documento: </b>{{empleado.documento}}<br> <b>Ciudad: </b>{{empleado.lugar_residencia.nombre_ciudad}}<br> <b>Fecha de Nacimiento: </b>{{empleado.fecha_nacimiento}}<br> <b>Email: </b>{{empleado.email}}<br> <b>Telefono: </b>{{empleado.telefono}}<br> <b>Usuario: </b>{{empleado.usuario}}<br><b>Empresa: </b>{{empleado.empresa.nombre_empresa}}<br><br></li>
-      <button type="submit" class="btn btn-danger btn-sm" id="btn-borrrar">Borrar Empleado</button><br><br>
+      <a href="http://127.0.0.1:8000/empleados/delete/{{empleado.id}}"><button type="submit" class="btn btn-danger btn-sm" id="btn-borrrar">Borrar Empleado</button></a> 
+      <a href="http://127.0.0.1:8000/empleados/editar/{{empleado.id}}"><button type="submit" class="btn btn-primary btn-sm" id="btn-borrrar">Editar Empleado</button></a><br><br>
       {%endfor%}
       </center>
       

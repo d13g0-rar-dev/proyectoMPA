@@ -81,8 +81,30 @@ def delete_empleado(request, id):
   if request.method=='GET':
     empleado.delete()
     messages.success(request,  'Se ha eliminado al empleado exitosamente')
-    next = request.POST.get('next','/empleado')
+    next = request.POST.get('next','/empleados')
     return HttpResponseRedirect(next)
+  
+def editar_empleado(request, id):
+    if request.method=='POST':
+        form=EmpleadoForm(request.POST)
+        if form.is_valid():
+          nombre = form.cleaned_data["nombre"]
+          apellido = form.cleaned_data["apellido"]
+          tipo_documento = form.cleaned_data["tipo_documento"]
+          documento = form.cleaned_data["documento"]
+          lugar_residencia = form.cleaned_data["lugar_residencia"]
+          fecha_nacimiento = form.cleaned_data["fecha_nacimiento"]
+          email = form.cleaned_data["email"]
+          telefono = form.cleaned_data["telefono"]
+          usuario = form.cleaned_data["usuario"]
+          password = form.cleaned_data["password"]
+          empresa = form.cleaned_data["empresa"]
+          Empleado.objects.filter(pk=id).update(nombre = nombre , apellido = apellido, tipo_documento=tipo_documento, documento=documento,lugar_residencia=lugar_residencia, fecha_nacimiento=fecha_nacimiento,email=email,telefono=telefono,usuario=usuario,password=password, empresa=empresa)
+          next = request.POST.get('next','/empleados')
+          return HttpResponseRedirect(next)
+    else:
+        form = EmpleadoForm()
+        return render(request,'books/editar_empleado.html',{'form':form})
 
 def integrantes(request):
   template=loader.get_template("books/integrantes.html")

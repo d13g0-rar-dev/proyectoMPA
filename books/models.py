@@ -15,7 +15,8 @@ class Empresa(models.Model):
 
 # Modelo para la entidad Empleado.
 class Empleado(models.Model):
-  nombre = models.CharField(max_length=30)
+  id = models.AutoField(max_length=10, primary_key=True)
+  nombre = models.CharField(max_length=30)  
   apellido = models.CharField(max_length=30)
   tipo_documento = models.ForeignKey(TipoDocumento,  on_delete=models.CASCADE)
   documento = models.BigIntegerField()
