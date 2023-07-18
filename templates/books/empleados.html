@@ -7,19 +7,17 @@
 
 {%block content%}
 <div class="container">
-  <h1>Lista de Empleados:</h1>
-  {%if empleados%}
-    <ul>
-      <center>
+  <h1 class="elegant-title">Lista de Empleados:</h1>
+    {%if empleados%}
+      <div class="container-sm p-3 my-4 border d-flex justify-content">
+        <ul>
         {%for empleado in empleados%}
-      <li><b>Nombre: </b>{{empleado.nombre}}<br><b>Apellido: </b>{{empleado.apellido}} <br><b>Tipo de Documento: </b>{{empleado.tipo_documento.nombre_tipo}}<br> <b>Documento: </b>{{empleado.documento}}<br> <b>Ciudad: </b>{{empleado.lugar_residencia.nombre_ciudad}}<br> <b>Fecha de Nacimiento: </b>{{empleado.fecha_nacimiento}}<br> <b>Email: </b>{{empleado.email}}<br> <b>Telefono: </b>{{empleado.telefono}}<br> <b>Usuario: </b>{{empleado.usuario}}<br><b>Empresa: </b>{{empleado.empresa.nombre_empresa}}<br><br></li>
-      <a href="http://127.0.0.1:8000/empleados/delete/{{empleado.id}}"><button type="submit" class="btn btn-danger btn-sm" id="btn-borrrar">Borrar Empleado</button></a> 
-      <a href="http://127.0.0.1:8000/empleados/editar/{{empleado.id}}"><button type="submit" class="btn btn-primary btn-sm" id="btn-borrrar">Editar Empleado</button></a><br><br>
-      {%endfor%}
-      </center>
-      
-    </ul>
-    
+        <li><b>Nombre: </b>{{empleado.nombre}}<br><b>Apellido: </b>{{empleado.apellido}} <br><b>Tipo de Documento: </b>{{empleado.tipo_documento.nombre_tipo}}<br> <b>Documento: </b>{{empleado.documento}}<br> <b>Ciudad: </b>{{empleado.lugar_residencia.nombre_ciudad}}<br> <b>Fecha de Nacimiento: </b>{{empleado.fecha_nacimiento}}<br> <b>Email: </b>{{empleado.email}}<br> <b>Telefono: </b>{{empleado.telefono}}<br> <b>Usuario: </b>{{empleado.usuario}}<br><b>Empresa: </b>{{empleado.empresa.nombre_empresa}}<br><br></li>
+        <a href="http://127.0.0.1:8000/empleados/delete/{{empleado.id}}"><button type="submit" class="btn btn-danger btn-sm" id="btn-borrrar">Borrar Empleado</button></a> 
+        <a href="http://127.0.0.1:8000/empleados/editar/{{empleado.id}}"><button type="submit" class="btn btn-primary btn-sm" id="btn-borrrar">Editar Empleado</button></a><br><br><br>
+        {%endfor%}  
+        </ul>
+      </div>
     {%endif%}
 </div>
 {%endblock content%}
