@@ -4,7 +4,7 @@ from django.template import loader
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from books.forms import EmpresaForm, EmpleadoForm
-from .models import Empresa, Empleado
+from .models import Empresa, Empleado, TipoDocumento, Ciudad
 
 
 # Create your views here.
@@ -19,6 +19,18 @@ def empleados(request):
   template = loader.get_template("books/empleados.html")
   context = {"empleados":empleados,}
   return HttpResponse(template.render(context,request))  
+
+def tipoDocumento(request):
+  tiposDocumento = TipoDocumento.objects.all()
+  template = loader.get_template("books/tipoDocumento.html")
+  context = {"tiposDocumento":tiposDocumento,}
+  return HttpResponse(template.render(context,request))
+
+def ciudad(request):
+  ciudades = Ciudad.objects.all()
+  template = loader.get_template("books/ciudades.html")
+  context = {"ciudades":ciudades,}
+  return HttpResponse(template.render(context,request))
 
 def home(request):
   template=loader.get_template("index.html")

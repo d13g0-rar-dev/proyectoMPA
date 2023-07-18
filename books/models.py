@@ -2,17 +2,15 @@ from django.db import models
 
 # Modelo para la entidad TipoDocumento.
 class TipoDocumento(models.Model):
-  nombre_tipo = models.CharField(max_length=30)
-  descripcion_tipo = models.CharField(max_length=300)
+  nombre_tipo = models.CharField(max_length=300, primary_key=True)
   
 # Modelo para la entidad Ciudad.
 class Ciudad(models.Model):
-  nombre_ciudad = models.CharField(max_length=30)
-  descripcion_ciudad = models.CharField(max_length=300)
+  nombre_ciudad = models.CharField(max_length=300, primary_key=True)
 
 # Modelo para la entidad Empresa.
 class Empresa(models.Model):
-  nombre_empresa = models.CharField(max_length=30)
+  nombre_empresa = models.CharField(max_length=300, primary_key=True)
   nit = models.IntegerField()
 
 # Modelo para la entidad Empleado.

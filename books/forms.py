@@ -13,8 +13,8 @@ class EmpresaForm(forms.ModelForm):
       "nit",
     }
     labels = {
-      "Nombre Empresa": "nombre_empresa",
-      "NIT": "nit",
+      "nombre_empresa": "Nombre de Empresa",
+      "nit": "NIT",
     }
     widgets = {
       "nombre_empresa" : forms.TextInput(attrs={"class": "form-control", "required":""}),
@@ -40,22 +40,22 @@ class EmpleadoForm(forms.ModelForm):
       "empresa", 
     }
     labels = {
-      "Nombre": "nombre",
-      "Apellido": "apellido",
-      "Tipo de Documento": "tipo_documento",
-      "Documento": "documento",
-      "Ciudad de Residencia": "lugar_residencia",
-      "Fecha de Nacimiento": "fecha_nacimiento",
-      "Email": "email",
-      "Telefono": "telefono",
-      "Usuario": "usuario",
-      "Contraseña": "password",
-      "Empresa":"empresa",
+      "nombre": "Nombre",
+      "apellido": "Apellido",
+      "tipo_documento": "Tipo de Documento",
+      "documento": "Documento",
+      "lugar_residencia": "Ciudad de Residencia",
+      "fecha_nacimiento": "Fecha de Nacimiento",
+      "email": "Email",
+      "telefono": "Telefono",
+      "usuario": "Usuario",
+      "password": "Contraseña",
+      "empresa":"Empresa",
     }
     widgets = {
       "nombre" : forms.TextInput(attrs={"class": "form-control", "required":""}),
       "apellido" : forms.TextInput(attrs={"class": "form-control", "required":""}),
-      "tipo_documento" : forms.TextInput(attrs={"class": "form-control", "required":""}),
+      "tipo_documento" : forms.TextInput(attrs={"class": "form-control", "required": "" }),
       "documento" : forms.TextInput(attrs={"class": "form-control", "required":""}),
       "lugar_residencia" : forms.TextInput(attrs={"class": "form-control", "required":""}),
       "fecha_nacimiento" : forms.TextInput(attrs={"class": "form-control", "required":""}),

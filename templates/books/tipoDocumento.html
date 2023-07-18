@@ -1,0 +1,19 @@
+{%extends "base.html"%}
+
+{%block extrahead%}
+  <title>Tipos de Documento</title>
+{%endblock extrahead%}
+
+
+{%block content%}
+<div class="container">
+  <h1>Lista de Tipos:</h1>
+  {%if tiposDocumento%}
+    <ul>
+      {%for tipo_documento in tiposDocumento%}
+      <li><b>Nombre: </b>{{tipo_documento.nombre_tipo}}</li>
+      {%endfor%}
+    </ul>
+    {%endif%}
+</div>
+{%endblock content%}
